@@ -100,3 +100,10 @@ if __name__ == '__main__':
     print(s_list.get_size())
     s_list.traverse()
     print(s_list.search(7))
+
+# True
+# 3
+# data > 7
+# data > 1
+# data > 14
+# (0, <__main__.Node object at 0x7fe7502d7d00>)
