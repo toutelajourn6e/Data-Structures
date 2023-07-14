@@ -10,10 +10,24 @@ class SinglyLinkedList:
         self.tail = None
         self.size = 0
 
+    def get_size(self):
+        return self.size
+
     def is_empty(self):
         return not bool(self.size)
 
-    def append(self, value):
+    def search(self, target):
+        if self.is_empty():
+            print("Linked List is Empty")
+            return
+        node = self.head
+        for i in range(self.size):
+            if node.value == target:
+                return i, node
+            node = node.next
+        return None
+
+    def insert_last(self, value):
         node = Node(value)
         if not self.head:
             self.head = node
@@ -23,7 +37,7 @@ class SinglyLinkedList:
             self.tail = node
         self.size += 1
 
-    def append_left(self, value):
+    def insert_first(self, value):
         node = Node(value)
         if not self.head:
             self.head = node
@@ -33,32 +47,56 @@ class SinglyLinkedList:
             self.head = node
         self.size += 1
 
-    def popleft(self):
+    def delete_last(self):
         if self.is_empty():
             print("Linked List is Empty")
             return
-
         node = self.head
-        self.head = node.next
-        node.next = None
+        if self.get_size() == 1:
+            self.head = None
+            self.tail = None
+        else:
+            while node.next != self.tail:
+                node = node.next
+            self.tail = node
+            node.next = None
         self.size -= 1
-        return node.value
+
+    def delete_first(self):
+        if self.is_empty():
+            print("Linked List is Empty")
+            return
+        node = self.head
+        if self.get_size() == 1:
+            self.head = None
+            self.tail = None
+        else:
+            self.head = node.next
+            node.next = None
+        self.size -= 1
 
     def traverse(self):
+        if self.is_empty():
+            print("Linked List is Empty")
+            return
         node = self.head
         while node.value:
             print('data >', node.value)
-            node = node.nextf
+            node = node.next
             if node == self.tail.next:
                 break
 
 
 if __name__ == '__main__':
     s_list = SinglyLinkedList()
-    s_list.append(3)
-    s_list.append(5)
-    s_list.append(2)
-    s_list.traverse()
-    print(s_list.popleft())
     print(s_list.is_empty())
+    s_list.insert_last(3)
+    s_list.insert_last(5)
+    s_list.delete_first()
+    s_list.insert_first(1)
+    s_list.delete_last()
+    s_list.insert_first(7)
+    s_list.insert_last(14)
+    print(s_list.get_size())
     s_list.traverse()
+    print(s_list.search(7))
