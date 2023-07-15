@@ -16,18 +16,28 @@ class SinglyLinkedList:
     def is_empty(self):
         return not bool(self.size)
 
-    def search(self, target):
+    def search_value(self, target):
         if self.is_empty():
-            print("Linked List is Empty")
-            return
+            return print("Linked List is Empty")
         node = self.head
         for i in range(self.size):
             if node.value == target:
-                return i, node
+                return i
             node = node.next
         return None
 
-    def insert_last(self, value):
+    def search_idx(self, idx):
+        if self.is_empty():
+            return print("Linked List is Empty")
+        elif idx < 0 or idx >= self.size:
+            raise IndexError("Linked List index out of range")
+        else:
+            node = self.head
+            for i in range(idx):
+                node = node.next
+            return node.value
+
+    def add_last(self, value):
         node = Node(value)
         if not self.head:
             self.head = node
@@ -37,7 +47,7 @@ class SinglyLinkedList:
             self.tail = node
         self.size += 1
 
-    def insert_first(self, value):
+    def add_first(self, value):
         node = Node(value)
         if not self.head:
             self.head = node
@@ -45,6 +55,22 @@ class SinglyLinkedList:
         else:
             node.next = self.head
             self.head = node
+        self.size += 1
+
+    def insert(self, idx, value):
+        if idx < 0 or idx > self.size:
+            raise IndexError("Linked List index out of range")
+        if idx == 0:
+            return self.add_first(value)
+        elif idx == self.size:
+            return self.add_last(value)
+        else:
+            new_node = Node(value)
+            node = self.head
+            for i in range(idx - 1):
+                node = node.next
+            new_node.next = node.next
+            node.next = new_node
         self.size += 1
 
     def delete_last(self):
@@ -75,6 +101,22 @@ class SinglyLinkedList:
             node.next = None
         self.size -= 1
 
+    def remove(self, idx):
+        if idx < 0 or idx > self.size:
+            raise IndexError("Linked List assignment index out of range")
+        if idx == 0:
+            return self.delete_first()
+        elif idx == self.size:
+            return self.delete_last()
+        else:
+            node = self.head
+            for i in range(idx - 1):
+                node = node.next
+            del_node = node.next
+            node.next = del_node.next
+            del_node.next = None
+        self.size -= 1
+
     def traverse(self):
         if self.is_empty():
             print("Linked List is Empty")
@@ -90,20 +132,32 @@ class SinglyLinkedList:
 if __name__ == '__main__':
     s_list = SinglyLinkedList()
     print(s_list.is_empty())
-    s_list.insert_last(3)
-    s_list.insert_last(5)
+    s_list.add_last(3)
+    s_list.add_last(5)
     s_list.delete_first()
-    s_list.insert_first(1)
+    s_list.add_first(1)
     s_list.delete_last()
-    s_list.insert_first(7)
-    s_list.insert_last(14)
+    s_list.add_first(7)
+    s_list.add_last(14)
     print(s_list.get_size())
     s_list.traverse()
-    print(s_list.search(7))
+    print(s_list.search_value(7))
+    s_list.insert(1, 5)
+    s_list.remove(2)
+    s_list.insert(2, 2)
+    s_list.traverse()
+    print(s_list.search_idx(3))
+    print(s_list.get_size())
 
 # True
 # 3
 # data > 7
 # data > 1
 # data > 14
-# (0, <__main__.Node object at 0x7fe7502d7d00>)
+# 0
+# data > 7
+# data > 5
+# data > 2
+# data > 14
+# 14
+# 4
