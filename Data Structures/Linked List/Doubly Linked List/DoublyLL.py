@@ -134,6 +134,18 @@ class DoublyLinkedList:
             node.prev = None
         self.size -= 1
 
+    def reverse(self):
+        temp = None
+        node = self.head
+        self.tail = node
+        while node is not None:
+            temp = node.prev
+            node.prev = node.next
+            node.next = temp
+            node = node.prev
+        if temp is not None:
+            self.head = temp.prev
+
     def traverse(self):
         if self.is_empty():
             print("Linked List is Empty")
@@ -160,6 +172,9 @@ if __name__ == '__main__':
     d_list.traverse()
     print(d_list.search_idx(2))
     print(d_list.search_value(12))
+    d_list.reverse()
+    d_list.traverse()
+    print(d_list.head.value, d_list.tail.value)
 
 # True
 # data > 8
@@ -168,3 +183,8 @@ if __name__ == '__main__':
 # data > 12
 # 5
 # 3
+# data > 12
+# data > 5
+# data > 3
+# data > 8
+# 12 8

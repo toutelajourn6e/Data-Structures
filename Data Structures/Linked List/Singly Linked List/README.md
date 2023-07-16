@@ -19,6 +19,7 @@
 * delete_first : 헤더의 노드를 삭제
 * delete_last : 테일의 노드를 삭제
 * remove : 특정한 위치의 노드 삭제
+* reverse : 연결 리스트 뒤집기
 * traverse : 연결 리스트를 순회
 
 ## Time Complexity
@@ -33,3 +34,4 @@
 |  가장 뒤에 노드 삽입  |  O(1)  |
 |  가장 앞의 노드 제거  |  O(1)  |
 |  가장 뒤의 노드 제거  |  O(n)  |
+|  연결 리스트 뒤집기   |  O(n)  |

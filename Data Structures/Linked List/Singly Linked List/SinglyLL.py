@@ -117,6 +117,17 @@ class SinglyLinkedList:
             del_node.next = None
         self.size -= 1
 
+    def reverse(self):
+        node = self.head
+        prev = None
+        self.tail = node
+        while node is not None:
+            next = node.next
+            node.next = prev
+            prev = node
+            node = next
+        self.head = prev
+
     def traverse(self):
         if self.is_empty():
             print("Linked List is Empty")
@@ -148,6 +159,9 @@ if __name__ == '__main__':
     s_list.traverse()
     print(s_list.search_idx(3))
     print(s_list.get_size())
+    s_list.reverse()
+    s_list.traverse()
+    print(s_list.head.value, s_list.tail.value)
 
 # True
 # 3
@@ -161,3 +175,8 @@ if __name__ == '__main__':
 # data > 14
 # 14
 # 4
+# data > 14
+# data > 2
+# data > 5
+# data > 7
+# 14 7
