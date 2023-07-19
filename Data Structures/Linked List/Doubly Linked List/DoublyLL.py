@@ -90,8 +90,7 @@ class DoublyLinkedList:
 
     def delete_last(self):
         if self.is_empty():
-            print("Linked List is Empty")
-            return
+            return print("Linked List is Empty")
         if self.get_size() == 1:
             self.head = None
             self.tail = None
@@ -102,8 +101,7 @@ class DoublyLinkedList:
 
     def delete_first(self):
         if self.is_empty():
-            print("Linked List is Empty")
-            return
+            return print("Linked List is Empty")
         if self.get_size() == 1:
             self.head = None
             self.tail = None
@@ -148,8 +146,7 @@ class DoublyLinkedList:
 
     def traverse(self):
         if self.is_empty():
-            print("Linked List is Empty")
-            return
+            return print("Linked List is Empty")
         node = self.head
         while node.value:
             print('data >', node.value)
