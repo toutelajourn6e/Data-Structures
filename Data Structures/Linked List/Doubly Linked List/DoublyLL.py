@@ -90,7 +90,7 @@ class DoublyLinkedList:
 
     def delete_last(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            raise IndexError("Linked List is Empty")
         if self.get_size() == 1:
             self.head = None
             self.tail = None
@@ -101,7 +101,7 @@ class DoublyLinkedList:
 
     def delete_first(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            raise IndexError("Linked List is Empty")
         if self.get_size() == 1:
             self.head = None
             self.tail = None

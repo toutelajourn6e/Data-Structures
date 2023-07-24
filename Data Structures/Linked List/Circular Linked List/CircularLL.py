@@ -30,7 +30,7 @@ class CircularLinkedList:
 
     def delete(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            raise IndexError("Linked List is Empty")
         node = self.head.next
         if self.size == 1:
             node.next = None

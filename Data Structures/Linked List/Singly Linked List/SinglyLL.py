@@ -75,7 +75,7 @@ class SinglyLinkedList:
 
     def delete_last(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            raise IndexError("Linked List is Empty")
         node = self.head
         if self.get_size() == 1:
             self.head = None
@@ -89,7 +89,7 @@ class SinglyLinkedList:
 
     def delete_first(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            raise IndexError("Linked List is Empty")
         node = self.head
         if self.get_size() == 1:
             self.head = None
