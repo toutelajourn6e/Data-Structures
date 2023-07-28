@@ -37,7 +37,7 @@ class Stack:
             return print("Stack is Empty")
         return self.head.value
 
-    def print(self):
+    def print_stack(self):
         if self.is_empty():
             return print("Stack is Empty")
         node = self.head
@@ -59,7 +59,7 @@ if __name__ == '__main__':
     my_stack.push(1)
     my_stack.push(3)
     my_stack.push(9)
-    my_stack.print()
+    my_stack.print_stack()
     print(my_stack.peek())
     print(my_stack.get_size())
 
