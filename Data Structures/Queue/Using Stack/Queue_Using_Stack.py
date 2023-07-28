@@ -1,13 +1,7 @@
-class Node:
-    def __init__(self, value, next=None):
-        self.value = value
-        self.next = next
-
-
 class Queue:
     def __init__(self):
-        self.head = None
-        self.tail = None
+        self.stack1 = []
+        self.stack2 = []
         self.size = 0
 
     def get_size(self):
@@ -16,42 +10,40 @@ class Queue:
     def is_empty(self):
         return not bool(self.size)
 
+
+
     def enqueue(self, value):
-        node = Node(value)
-        if self.is_empty():
-            self.head = node
-            self.tail = node
-        else:
-            self.tail.next = node
-            self.tail = node
+        while self.stack1:
+            self.stack2.append(self.stack1.pop())
+
+        self.stack1.append(value)
+
+        while self.stack2:
+            self.stack1.append(self.stack2.pop())
+
         self.size += 1
+
 
     def dequeue(self):
         if self.is_empty():
             raise IndexError("dequeue from empty queue")
-        node = self.head
-        self.head = self.head.next
-        node.next = None
         self.size -= 1
-        return node.value
+        return self.stack1.pop()
 
     def peek(self):
         if self.is_empty():
             raise IndexError("Queue is Empty")
-        return self.head.value
+        return self.stack1[-1]
 
 
     def print_queue(self):
         if self.is_empty():
             return print("Queue is Empty")
-        node = self.head
-        while node.next is not None:
-            print('data >', node.value)
-            node = node.next
-        print('data >', self.tail.value)
+        for i in range(len(self.stack1)-1, -1, -1):
+            print('data >', self.stack1[i])
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     my_queue = Queue()
     print(my_queue.is_empty())
     my_queue.enqueue(23)
