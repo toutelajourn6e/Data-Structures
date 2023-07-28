@@ -15,3 +15,7 @@
 ### - Stack
 * [Using Linked List](https://github.com/toutelajourn6e/Data_Structures-Algorithms/tree/master/Data%20Structures/Stack)
 * [Using List](https://github.com/toutelajourn6e/Data_Structures-Algorithms/tree/master/Data%20Structures/Stack)
+
+### - Queue
+* [Using Linked List](https://github.com/toutelajourn6e/Data_Structures-Algorithms/tree/master/Data%20Structures/Queue/Using%20Linked%20List)
+* [Using Stack](https://github.com/toutelajourn6e/Data_Structures-Algorithms/tree/master/Data%20Structures/Queue/Using%20Stack)
