@@ -20,4 +20,4 @@
 |      push       |  O(1)  |
 |      pop       |  O(1)  |
 | peek |  O(1)  |
-| print |  O(n)  |
+| print_stack |  O(n)  |
