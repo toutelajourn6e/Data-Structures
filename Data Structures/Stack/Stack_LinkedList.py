@@ -13,7 +13,7 @@ class Stack:
         return self.size
 
     def is_empty(self):
-        return not bool(self.size)
+        return self.size == 0
 
     def push(self, value):
         node = Node(value)
@@ -39,7 +39,8 @@ class Stack:
 
     def print_stack(self):
         if self.is_empty():
-            return print("Stack is Empty")
+            print("Stack is Empty")
+            return
         node = self.head
         while node is not None:
             print('data >', node.value)

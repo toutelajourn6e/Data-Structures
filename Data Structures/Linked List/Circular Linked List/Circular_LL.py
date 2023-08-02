@@ -13,7 +13,7 @@ class CircularLinkedList:
         return self.size
 
     def is_empty(self):
-        return not bool(self.size)
+        return self.size == 0
 
     def first(self):
         return self.head.value
@@ -42,7 +42,8 @@ class CircularLinkedList:
 
     def traverse(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            print("Linked List is Empty")
+            return
         node = self.head.next
         while node != self.head:
             print('data >', node.value)

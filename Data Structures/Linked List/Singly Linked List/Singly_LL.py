@@ -14,11 +14,12 @@ class SinglyLinkedList:
         return self.size
 
     def is_empty(self):
-        return not bool(self.size)
+        return self.size == 0
 
     def search_value(self, target):
         if self.is_empty():
-            return print("Linked List is Empty")
+            print("Linked List is Empty")
+            return
         node = self.head
         for i in range(self.size):
             if node.value == target:
@@ -28,7 +29,8 @@ class SinglyLinkedList:
 
     def search_idx(self, idx):
         if self.is_empty():
-            return print("Linked List is Empty")
+            print("Linked List is Empty")
+            return
         elif idx < 0 or idx >= self.size:
             raise IndexError("Linked List index out of range")
         else:
@@ -128,7 +130,8 @@ class SinglyLinkedList:
 
     def traverse(self):
         if self.is_empty():
-            return print("Linked List is Empty")
+            print("Linked List is Empty")
+            return
         node = self.head
         while node.value:
             print('data >', node.value)

@@ -14,7 +14,7 @@ class Queue:
         return self.size
 
     def is_empty(self):
-        return not bool(self.size)
+        return self.size == 0
 
     def enqueue(self, value):
         node = Node(value)
@@ -43,7 +43,8 @@ class Queue:
 
     def print_queue(self):
         if self.is_empty():
-            return print("Queue is Empty")
+            print("Queue is Empty")
+            return
         node = self.head
         while node.next is not None:
             print('data >', node.value)

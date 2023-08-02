@@ -8,7 +8,7 @@ class Queue:
         return self.size
 
     def is_empty(self):
-        return not bool(self.size)
+        return self.size == 0
 
 
 
@@ -38,7 +38,8 @@ class Queue:
 
     def print_queue(self):
         if self.is_empty():
-            return print("Queue is Empty")
+            print("Queue is Empty")
+            return
         for i in range(len(self.stack1)-1, -1, -1):
             print('data >', self.stack1[i])
 

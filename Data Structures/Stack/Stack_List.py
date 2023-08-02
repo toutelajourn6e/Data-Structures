@@ -20,7 +20,8 @@ class Stack:
 
     def print_stack(self):
         if self.is_empty():
-            return print("Stack is Empty")
+            print("Stack is Empty")
+            return
         for i in range(len(self.stack) - 1, -1, -1):
             print('data >', self.stack[i])
 
