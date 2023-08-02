@@ -1,5 +1,5 @@
-# Data_Structures-Algorithms
-자료구조와 알고리즘의 개념과 구현을 담은 레포지토리입니다.
+# Data_Structures
+자료구조의 개념과 구현을 담은 레포지토리입니다.
 
 모든 이미지 자료의 출처는 [Geeks for Geeks](https://www.geeksforgeeks.org) 입니다.
 
