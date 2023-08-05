@@ -19,3 +19,6 @@
 * [Using Linked List](https://github.com/toutelajourn6e/Data_Structures-Algorithms/tree/master/Data%20Structures/Queue/Using%20Linked%20List)
 * [Using Array](https://github.com/toutelajourn6e/Data_Structures/tree/master/Data%20Structures/Queue/Using%20Array)
 * [Using Stack](https://github.com/toutelajourn6e/Data_Structures-Algorithms/tree/master/Data%20Structures/Queue/Using%20Stack)
+
+### - Tree
+* [Binary Search Tree](https://github.com/toutelajourn6e/Data_Structures/tree/master/Data%20Structures/Tree/Binary%20Search%20Tree)
