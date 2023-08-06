@@ -10,28 +10,27 @@ class BST:
         self.root = None
 
     def insert(self, value):
-        def _insert(cur):
+        if self.root is None:
+            self.root = Node(value)
+            return True
+
+        cur = self.root
+        while cur:
             if value < cur.value:
                 if cur.left is None:
                     cur.left = Node(value)
                     return True
                 else:
-                    return _insert(cur.left)
+                    cur = cur.left
             elif value > cur.value:
                 if cur.right is None:
                     cur.right = Node(value)
                     return True
                 else:
-                    return _insert(cur.right)
+                    cur = cur.right
             else:  # value == cur.value
                 print(f"{value} already exists in the tree")
                 return False
-
-        if self.root is None:
-            self.root = Node(value)
-            return True
-
-        return _insert(self.root)
 
     def search(self, target):
         cur = self.root
@@ -75,7 +74,6 @@ class BST:
         elif cur.left and cur.right is None:
             if cur == self.root:
                 self.root = self.root.left
-                return True
             elif target < parent.value:
                 parent.left = cur.left
             else:
@@ -84,7 +82,6 @@ class BST:
         elif cur.left is None and cur.right:
             if cur == self.root:
                 self.root = self.root.right
-                return True
             elif target < parent.value:
                 parent.left = cur.right
             else:
@@ -195,4 +192,3 @@ if __name__ == "__main__":
 # Preorder -> [61, 30, 15, 20, 41, 66, 70]
 # Inorder -> [15, 20, 30, 41, 61, 66, 70]
 # Postorder -> [20, 15, 41, 30, 70, 66, 61]
-
