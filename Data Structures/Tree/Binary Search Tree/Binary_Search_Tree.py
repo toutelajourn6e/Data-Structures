@@ -24,7 +24,7 @@ class BST:
                 else:
                     return _insert(cur.right)
             else:  # value == cur.value
-                print(f"{value} is already exist in the tree")
+                print(f"{value} already exists in the tree")
                 return False
 
         if self.root is None:
@@ -59,7 +59,7 @@ class BST:
             else:  # target == cur.value
                 break
         else:  # Not found
-            print(f"{target} is not exist in the tree")
+            print(f"{target} does not exist in the tree")
             return False
 
         # target node has no child
@@ -185,13 +185,13 @@ if __name__ == "__main__":
     my_bst.inorder()
     my_bst.postorder()
 
-# 41 is already exist in the tree
+# 41 already exists in the tree
 # Preorder -> [50, 27, 15, 7, 20, 30, 41, 66, 58, 61, 70]
 # Inorder -> [7, 15, 20, 27, 30, 41, 50, 58, 61, 66, 70]
 # Postorder -> [7, 20, 15, 41, 30, 27, 61, 58, 70, 66, 50]
 # True
 # False
-# 1 is not exist in the tree
+# 1 does not exist in the tree
 # Preorder -> [61, 30, 15, 20, 41, 66, 70]
 # Inorder -> [15, 20, 30, 41, 61, 66, 70]
 # Postorder -> [20, 15, 41, 30, 70, 66, 61]
