@@ -23,3 +23,4 @@
 ### - Tree
 * [Binary Search Tree](https://github.com/toutelajourn6e/Data_Structures/tree/master/Data%20Structures/Tree/Binary%20Search%20Tree)
 * [Heap](https://github.com/toutelajourn6e/Data_Structures/tree/master/Data%20Structures/Tree/Heap)
+* [Trie](https://github.com/toutelajourn6e/Data-Structures/tree/master/Data%20Structures/Tree/Trie)

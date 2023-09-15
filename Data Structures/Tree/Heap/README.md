@@ -25,4 +25,4 @@ Max Heap : 부모 노드의 값이 자식 노드들의 값보다 항상 **크거
 |      heappush  |  O(logN)  |
 |      heappop    |  O(logN)  |
 
-heappush 와 heappop 연산을 하고 항상 heapify 작업을 하는데, 이때 최대 트리의 높이(logN)까지만 연산이 되므로 시간 복잡도는 O(logN)이다.
+heappush 와 heappop 연산을 하고 항상 heapify 작업을 하는데, 이때 최대 트리의 높이(logN)만큼 연산이 되므로 시간 복잡도는 O(logN)이다.
